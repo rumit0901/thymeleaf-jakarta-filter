@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>This page use as turning port</title>
+  </head>
+
+  <body>
+
+    <input hidden th:value="@{'/'} + ${tourl}" name="toPage"/>
+    
+    <script>
+    	document.location.replace(document.getElementsByName("toPage")[0].value);
+    </script>
+  
+  </body>
+  
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Student Management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+
+    <h1>Student list</h1>
+  	<h3><a href="../student/new.html" th:href="@{/students/new}">Add New</a></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>PASSPORT NUMBER</th>
+        </tr>
+      </thead>
+      <tbody th:remove="all-but-first">
+        <tr th:each="std : ${students}" th:class="${stdStat.odd}? 'odd'">
+          <td th:text="${std.id}">ID</td>
+          <td th:text="${std.name}">Name</td>
+          <td th:text="${std.passportnumber}">Passport Number</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+    
+  </body>
+  
+</html>
+

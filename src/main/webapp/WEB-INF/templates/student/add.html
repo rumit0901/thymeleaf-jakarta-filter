@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Student Management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+
+    <h1 th:text="${student.id} == null ? 'New Student' : 'Update Student'">New Student</h1>
+	<form method="post" action="" th:object=${student}>
+		<input hidden name="id" th:value="*{id}"/>
+		<label>Name: </label><input type="text" name="name" th:value="*{name}"><br>
+		<label>Passport Number: </label><input type="text" name="passportNumber" th:value="*{passportNumber}"><br>
+		<input type="submit" value="Save"/>
+		
+	</form>  
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+    
+  </body>
+  
+</html>
+
